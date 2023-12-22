@@ -1,45 +1,68 @@
+body{
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#app-container{
+  height: 100%;
+}
 .App {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  text-align: center;
-  height: 100%;
-  padding: 10px;
-  background-color: #282c34;
-}
-
-.App-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  /* background-color: #1e1e1e;  */
+  background: rgba(0,0,0,0.8);
+  color: #fff; /* Light text color */
+}
+
+
+
+.title {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: Arial, sans-serif;
+}
+
+.coding {
+  margin: 0;
+  font-size: 35px; /* Adjust the font size as needed */
+  color: #fff; /* Accent color */
+  font-weight: bold;
+}
+
+.buddies {
+  margin: 0;
+  padding: 10px 7px;
+  border-radius: 5px;
+  background-color: #fa971f; /* Accent color */
+  color: black; /* Text color for the badge */
+  font-size: 24px; /* Adjust the font size as needed */
+  margin-left: 10px; /* Adjust the spacing between Coding and Buddies */
+  font-weight: bolder;
+}
+
+button {
+  /* margin-top: 10px; */
+  padding: 12px;
+  background-color: #4caf50; /* Green button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  margin-top: 20px;
+  font-size: 18px; /* Adjust the font size as needed */
 }
