@@ -40,9 +40,10 @@ const Popup = () => {
           body: data,
           redirect: 'follow',
         };
+        // chrome.runtime.sendMessage({ action: 'storeToken' , sessionToken: "tokeeeeen"});
 
         fetch(
-          'https://084e-2405-201-c033-80be-ed2d-ea6a-26f1-62ed.ngrok-free.app/addUser',
+          'https://084e-2405-201-c033-80be-ed2d-ea6a-26f1-62ed.ngrok-free.app/auth/updateTokens',
           requestOptions
         )
           .then((response) => response.text())
@@ -50,7 +51,8 @@ const Popup = () => {
             console.log(result);
             const res = JSON.parse(result);
             console.log('res', res);
-            if (res.username) {
+            if (res.username && res.sessionToken) {
+              chrome.runtime.sendMessage({ action: 'storeToken' , sessionToken: res.sessionToken});
               setusername(res.username);
             }
           })

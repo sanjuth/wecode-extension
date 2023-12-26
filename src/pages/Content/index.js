@@ -1,3 +1,7 @@
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.');
+console.log("inject script working")
 
+chrome.storage.local.get(['sessionToken'], function (result) {
+    if(result.sessionToken) {
+        localStorage.setItem('wecodeSessionToken', result.sessionToken);
+    }
+});
