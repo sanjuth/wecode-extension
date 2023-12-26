@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Popup = () => {
   const [username, setusername] = useState('');
+  const [sessionToken, setsessionToken] = useState('');
   const [message, setmessage] = useState('Fetching from leetcode ....');
 
 
@@ -43,7 +44,7 @@ const Popup = () => {
         // chrome.runtime.sendMessage({ action: 'storeToken' , sessionToken: "tokeeeeen"});
 
         fetch(
-          'https://084e-2405-201-c033-80be-ed2d-ea6a-26f1-62ed.ngrok-free.app/auth/updateTokens',
+          'https://677b-183-82-115-2.ngrok-free.app/auth/updateTokens',
           requestOptions
         )
           .then((response) => response.text())
@@ -52,8 +53,9 @@ const Popup = () => {
             const res = JSON.parse(result);
             console.log('res', res);
             if (res.username && res.sessionToken) {
-              chrome.runtime.sendMessage({ action: 'storeToken' , sessionToken: res.sessionToken});
+              // chrome.runtime.sendMessage({ action: 'storeToken' , sessionToken: res.sessionToken});
               setusername(res.username);
+              setsessionToken(res.sessionToken)
             }
           })
           .catch((error) => console.log('error', error));
@@ -74,7 +76,7 @@ const Popup = () => {
         <div>
           <button>
             <a
-              href={`http://192.168.29.112:5173/${username}`}
+              href={`https://5475-183-82-115-2.ngrok-free.app/${username}/${sessionToken}`}
               target="_blank"
               rel="noopener noreferrer"
             >
